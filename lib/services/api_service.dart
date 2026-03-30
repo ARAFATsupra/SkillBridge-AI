@@ -25,7 +25,7 @@ class ApiConfig {
   ApiConfig._();
 
   /// ⚠️  Replace with your actual Render.com service URL before deploying.
-  static const String baseUrl = 'https://skillbridge-ai.onrender.com';
+  static const String baseUrl = 'https://skillbridge-ai-96jr.onrender.com';
 
   /// Predict endpoint — POST, JSON body.
   static const String predictPath = '/predict';
