@@ -1,0 +1,28 @@
+services:
+  - type: web
+    name: skillbridge-ai-api
+    runtime: python
+    region: oregon
+    plan: free
+    buildCommand: >
+      apt-get install -y tesseract-ocr &&
+      pip install -r requirements.txt &&
+      python -c "
+      import nltk;
+      [nltk.download(r, quiet=True) for r in [
+        'punkt', 'punkt_tab', 'stopwords',
+        'wordnet', 'vader_lexicon',
+        'averaged_perceptron_tagger'
+      ]]"
+    startCommand: gunicorn app:app --workers 1 --timeout 120 --bind 0.0.0.0:$PORT
+    envVars:
+      - key: MODEL_DIR
+        value: models
+      - key: PYTHON_VERSION
+        value: "3.11.9"
+    # Disk for model persistence (paid plan only).
+    # On free tier: bake .pkl files directly into backend/models/ in the repo.
+    # disk:
+    #   name: skillbridge-models
+    #   mountPath: /opt/render/project/src/models
+    #   sizeGB: 2

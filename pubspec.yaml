@@ -1,0 +1,72 @@
+name: skillbridge_ai
+description: >
+  SkillBridge AI — Job & Skill Recommendation App (SDG-8),
+  AI-powered job and skill recommendation system for Bangladeshi students.
+publish_to: 'none'
+version: 2.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: '>=3.10.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State management
+  provider: ^6.1.1
+
+  # Local storage
+  shared_preferences: ^2.3.0
+
+  # Charts & visualisations
+  fl_chart: ^1.1.1
+
+  # Animations
+  flutter_animate: ^4.3.0
+  lottie: ^3.0.0
+  shimmer: ^3.0.0
+
+  # Typography
+  google_fonts: ^8.0.2
+
+  # Networking
+  http: ^1.2.0
+  cached_network_image: ^3.3.1
+
+  # Date/time formatting
+  intl: ^0.20.2
+
+  # File picking (CV upload)
+  file_picker: ^10.3.10
+
+  # File system access (CV temp write)
+  path_provider: ^2.1.4
+
+  # Android runtime permissions (storage / files)
+  permission_handler: ^11.3.1
+
+  # URL launcher
+  url_launcher: ^6.3.0
+
+  # Word cloud
+  word_cloud: ^1.0.3
+
+  # Icons
+  cupertino_icons: ^1.0.8
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.4
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/Skill Bridge AI.png
+
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/Skill Bridge AI.png"
